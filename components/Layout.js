@@ -28,7 +28,7 @@ export default function Layout (props) {
     }
   })
 
-  function showModal(arg) {
+  function showModal (arg) {
     setDato(arg)
   }
 
@@ -67,7 +67,5 @@ export default function Layout (props) {
       </div>
       <Footer />
     </>
-  );
+  )
 }
-
-

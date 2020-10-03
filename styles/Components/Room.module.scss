@@ -26,9 +26,11 @@
   flex-direction: column;
   align-items: center;
   .photoHost{
-    width: 100px;
-    height: 100px;
     border-radius: 20px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center center;
+    width: 100px;
   }
 
   small{
@@ -38,7 +40,38 @@
   article{
     img{
       margin-right: $space-micro;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  button{
+    font-family: $font-Family-Kumbh;
+    cursor: pointer;
+    border: none;
+    background-color: #23CE6B;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: white;
+    font-size: 14px;
+    &:hover{
+      background-color: #23ce6abb;
     }
   }
 }
 
+@media screen  and  (min-width:425px) and  (max-width:599px) {
+  .containerDetails{
+    padding: 20px;
+    flex-direction: column-reverse;
+  }
+
+  .infoRoom{
+    padding: 5px;
+  }
+
+  .infoHost{
+    margin:  0 auto;
+  }
+}

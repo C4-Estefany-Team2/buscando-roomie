@@ -1,37 +1,31 @@
 import styles from '../styles/Components/Home.module.scss'
-import Layout from '../components/Layout'
 import Search from '../components/Search'
 import Hero from '../components/Hero'
 import Card from '../components/Card'
-import PageLoading from '../components/PageLoading'
-import { useState, useEffect } from 'react'
+import useFetchCardRoom from '../hooks/useFetchCardRoom'
+import { useRouter } from 'next/router'
 
 export default function Home () {
-  const [room, setRoom] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/rooms')
-      .then((response) => response.json())
-      .then((data) => setRoom(data))
-  }, [])
+  const router = useRouter()
+  const { rooms } = router.query
+  const { room } = useFetchCardRoom(rooms)
+  console.log(room)
 
   return (
     <>
-      <Layout>
-        <Search />
-        <Hero
-          heroImage={ '/heroImage.png'}
-        />
-        <main className={styles.father}>
-          <h1 className={styles.title}>Habitaciones disponibles</h1>
-          <section className={styles.main}>
-            {room.data?.map((item) => (
-              <Card key={item.id} {...item} />
-            ))
-            }
-          </section>
-        </main>
-      </Layout>
+      <Search />
+      <Hero
+        heroImage={ '/heroImage.png'}
+      />
+      <main className={styles.father}>
+        <h1 className={styles.title}>Habitaciones disponibles</h1>
+        <section className={styles.main}>
+          {room.data?.map((item) => (
+            <Card key={item.id} {...item} />
+          ))
+          }
+        </section>
+      </main>
     </>
   )
 }
