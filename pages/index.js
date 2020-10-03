@@ -2,16 +2,14 @@ import styles from '../styles/Components/Home.module.scss'
 import Search from '../components/Search'
 import Hero from '../components/Hero'
 import Card from '../components/Card'
-import { useState, useEffect } from 'react'
+import useFetchCardRoom from '../hooks/useFetchCardRoom'
+import { useRouter } from 'next/router'
 
 export default function Home () {
-  const [room, setRoom] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/rooms')
-      .then((response) => response.json())
-      .then((data) => setRoom(data))
-  }, [])
+  const router = useRouter()
+  const { rooms } = router.query
+  const { room } = useFetchCardRoom(rooms)
+  console.log(room)
 
   return (
     <>

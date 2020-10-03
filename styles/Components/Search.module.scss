@@ -7,9 +7,9 @@
   justify-content: space-between;
   align-self: center;
   justify-self: center;
-   margin: 5rem 0 ;
+  margin: 5rem 0 ;
   background-color:  #F6F8FF;
-  border: 1px solid #50514F;
+  border: 1px solid lightgray;
   border-radius: 10px;
   height: 40px;
   padding: 0 1rem;
@@ -30,6 +30,21 @@
   width: 640px;
   font-weight: 500;
   font-size: 1.1em;
+}
+
+.options {
+  background-color:  #F6F8FF;
+  font-size: 1rem;
+  border: none;
+  font-family: $font-Family-Kumbh;
+  height: 38px;
+  outline: none;
+  width: 130px;
+  option:hover {
+    background-color: $color-Card;
+    color:  #F6F8FF;
+    padding: 2px 0;
+  }
 }
 
 
@@ -61,14 +76,6 @@
     .search {
       width: 70%;
     }
-}
-
-// Tablet
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-
 }
 
 @media screen and (min-width:425px) and ( max-width:599px) {
