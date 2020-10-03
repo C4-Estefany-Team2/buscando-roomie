@@ -27,13 +27,12 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
           <h2>Anuncia un cuarto</h2>
           <form onSubmit={handleSubmit}>
             <section>
-              <div>
-                <h3>Agrega fotos del cuarto</h3>
-                <h6>(mínimo 2 - máximo 8)</h6>
-              </div>
-              <div>
-                <h3>Agrega una foto tuya</h3>
-              </div>
+              <label >Tu foto
+                <input type="file" name="" id=""/>
+              </label>
+              <label >Fotos del cuarto
+                <input type="file" name="" id=""/>
+              </label>
             </section>
             <section>
               <article>
