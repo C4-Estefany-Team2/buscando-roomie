@@ -5,7 +5,13 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
   const showHideClassName = show ? style.principalContainer : style.displayNone
 
   const [form, setValues] = useState({
-    email: ''
+    profileImg: '',
+    roomImg: '',
+    cost: '',
+    location: '',
+    charact: '',
+    roomDescription: '',
+    locationDesc: ''
   })
 
   const handleInput = (event) => {
@@ -28,10 +34,10 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
           <form onSubmit={handleSubmit}>
             <section>
               <label >Tu foto
-                <input type="file" name="" id=""/>
+                <input type='file' name='' accept="image/*"/>
               </label>
               <label >Fotos del cuarto
-                <input type="file" name="" id=""/>
+                <input type='file' name='' accept="image/*"/>
               </label>
             </section>
             <section>
