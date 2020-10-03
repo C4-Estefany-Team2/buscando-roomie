@@ -8,7 +8,7 @@ const Roomies = () => {
       <div className={styles.mainContainer}>
         <Search />
         <section className={styles.Cards}>
-          <h2>Conoce Roomies</h2>
+          <h1>Conoce Roomies</h1>
           <CardProfile />
         </section>
       </div>

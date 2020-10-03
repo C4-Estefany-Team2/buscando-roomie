@@ -28,7 +28,7 @@ export default function Layout (props) {
     }
   })
 
-  function showModal(arg) {
+  function showModal (arg) {
     setDato(arg)
   }
 
@@ -38,8 +38,8 @@ export default function Layout (props) {
   }
 
   const hideRegisterModal = () => {
-    setRegister(false);
-    setDato(0);
+    setRegister(false)
+    setDato(0)
   }
 
   return (
@@ -67,7 +67,5 @@ export default function Layout (props) {
       </div>
       <Footer />
     </>
-  );
+  )
 }
-
-
