@@ -69,7 +69,7 @@
       cursor: pointer;
     }
   }
-  section {
+  & > section {
     display: grid;
     &:nth-child(1) {
       height: 150px;
@@ -81,6 +81,9 @@
       width: 100%;
       grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
       column-gap: 5%;
+    }
+    & > label {
+      font-weight: 700;
     }
   }
 }
@@ -115,6 +118,7 @@
     display: grid;
     grid-template-rows: 20% 70%;
     row-gap: 10%;
+    text-align: center;
     & > * {
       background-color: #f6f8ff;
     }
@@ -125,6 +129,31 @@
     textarea {
       padding: 10px 10px;
       border-radius: $border-value;
+    }
+    & > label ~ section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center start;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+    & > label {
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      border-bottom: 1px solid gray;
+    }
+
+  }
+}
+
+.container form section article > label ~ section {
+  label {
+    display: flex;
+    input {
+      height: 15px;
+      width: 15px;
     }
   }
 }

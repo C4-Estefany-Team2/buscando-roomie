@@ -13,7 +13,8 @@ function Register ({ handleClose, show, modal, props }) {
     password: '',
     date: '',
     sex: '',
-    phone: ''
+    phone: '',
+    rol: ''
   })
 
   useEffect(() => {
@@ -25,7 +26,6 @@ function Register ({ handleClose, show, modal, props }) {
       ...form,
       [event.target.name]: event.target.value
     })
-    console.log(form)
   }
 
   const handleSubmit = (event) => {
@@ -39,7 +39,8 @@ function Register ({ handleClose, show, modal, props }) {
         email: form.email,
         password: form.password,
         data: Date.now(),
-        phone: form.phone
+        phone: form.phone,
+        rol: form.rol
       }
     }).then(alert('registro exitoso'))
       .then(modal(0))
@@ -100,7 +101,7 @@ function Register ({ handleClose, show, modal, props }) {
                 />
               </section>
               <section>
-                <select id='gender' name='sex' onChange={updateInput}>
+                <select id='gender' name='sex' onChange={updateInput} defaultValue='Hombre'>
                   <option value='Hombre'>Hombre</option>
                   <option value='Mujer'>Mujer</option>
                   <option value='Otro'>Otro</option>
@@ -124,6 +125,13 @@ function Register ({ handleClose, show, modal, props }) {
                 />
               </section>
             </article>
+            <section>
+              <h3>Rol:</h3>
+              <select id='rol' name='rol' onChange={updateInput} defaultValue='Host'>
+                <option value='Host'>Host</option>
+                <option value='Guest'>Guest</option>
+              </select>
+            </section>
             <input type='submit' value='Ingresar' className='register-btn' />
           </form>
           <p>
