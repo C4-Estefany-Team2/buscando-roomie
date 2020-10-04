@@ -1,10 +1,12 @@
 import style from '../styles/Components/Login.module.scss'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
-function Login ({ handleClose, show, modal, props }) {
+function Login ({ handleClose, show, modal, force }) {
+  const router = useRouter()
   const showHideClassName = show ? style.principalContainer : style.displayNone
-
+  
   const [form, setValues] = useState({
     email: '',
     id: '',
@@ -41,16 +43,17 @@ function Login ({ handleClose, show, modal, props }) {
       }
     })
       .then((res) => {
-        localStorage.setItem('usuario', JSON.stringify({
+        sessionStorage.setItem('usuario', JSON.stringify({
           token: res.data.token,
           user: res.data.user
         }))
       })
+      .then(alert('Inicio Exitoso'))
       .then(modal(0))
+      .then(force(true))
       .catch((error) => {
         console.log(error)
       })
-    console.log(JSON.parse(localStorage.getItem('usuario')))
   }
   const handleRegister = () => {
     modal(1)
