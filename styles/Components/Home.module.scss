@@ -1,23 +1,30 @@
 @import "../variables.scss";
 
+.father{
+  width: 90vw;
+}
 .container {
+  width: 100vw;
   align-items: center;
   display: flex;
   flex-direction: column;
   font-family: $font-Family-Kumbh;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 0.5rem;
 }
 
 .main {
+  width: 100%;
   align-items: center;
   justify-content: center;
   display: grid;
+  margin-top: 20px;
   grid-gap: 30px 5px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: repeat(300px);
   padding: 0 1rem;
+  margin-bottom: 5rem;
+  align-content: center;
 }
 
 .footer {
@@ -58,6 +65,7 @@
 
 .title,
 .description {
+
   text-align: center;
 }
 
@@ -123,5 +131,20 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width:425px) and ( max-width:599px) {
+  .main{
+    width:100%;
+    justify-content: center;
+    margin: 0;
+    grid-template: none;
+    margin-bottom: 15px;
+  }
+
+  .title{
+    font-size: 3rem;
+    margin-bottom: 10px;
   }
 }

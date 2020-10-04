@@ -1,0 +1,254 @@
+@import "../../styles/variables.scss";
+
+.principalContainer {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  background: -webkit-linear-gradient(#f0f4ff, #92ffeb9f);
+  filter: blur(40%);
+  place-items: center;
+  z-index: 9999;
+   
+  .container {
+    border: 1px solid black;
+    width: 60%;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:linear-gradient($Primary,$Primary-Lighter);
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    & > div {
+      height: 92%;
+      width: 84%;
+      margin: 4% 8%;
+      display: grid;
+      grid-template-rows: 4% 8% 88%;
+      justify-items: center;
+      span {
+        font-size: 18px;
+        font-weight: 700;
+        justify-self: flex-end;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      h2 {
+        justify-self: start;
+        margin: initial;
+      }
+      form {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-content: space-around;
+      }
+      p {
+        align-self: end;
+      }
+      label{
+        background-color: white;
+        border: 1px solid black;
+        border-radius:$border-value;
+        padding:10px;
+        
+        input{
+          border: none;
+          color: white;
+          padding:10px;
+        }
+
+      }
+    }
+  }
+}
+
+.container form {
+  input {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+    &:nth-child(3) {
+      width: 150px;
+      background-color: #23ce6b;
+      align-self: end;
+      cursor: pointer;
+    }
+  }
+  & > section {
+    display: grid;
+    &:nth-child(1) {
+      height: 150px;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+      column-gap: 5%;
+    }
+    &:nth-child(2) {
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+      column-gap: 5%;
+    }
+    & > label {
+      font-weight: 700;
+    }
+  }
+}
+
+.container form section {
+  div {
+    height: 80%;
+    width: 50%;
+    background-color: #c4c4c4;
+    border-radius: $border-value;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5%;
+    cursor: pointer;
+    & > * {
+    }
+    &:hover {
+      box-shadow: $value-shadow-box;
+    }
+    &:nth-child(1) {
+      justify-self: end;
+    }
+    &:nth-child(2) {
+      justify-self: start;
+    }
+  }
+  article {
+    display: grid;
+    grid-template-rows: 20% 70%;
+    row-gap: 10%;
+    text-align: center;
+    & > * {
+      background-color: #f6f8ff;
+    }
+    input {
+      font-size: 12px;
+      padding: 0 10px;
+    }
+    textarea {
+      padding: 10px 10px;
+      border-radius: $border-value;
+    }
+    & > label ~ section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center start;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+    & > label {
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      border-bottom: 1px solid gray;
+    }
+
+  }
+}
+
+.container form section article > label ~ section {
+  label {
+    display: flex;
+    input {
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+
+@media screen and (min-width:425px) and ( max-width:1200px) {
+  .principalContainer{
+     display: flex;
+     overscroll-behavior-y: inherit;
+    .container{
+      width:95%;
+      overflow-y: auto;
+
+        div{
+          margin-top: 20px;
+          left: 0;
+          right: 0;
+          top: 10px;
+       position: absolute;
+       overflow-y: scroll;
+       justify-content: center;
+       form{
+        position: relative;
+    top: 50px;
+       }
+      }
+     }
+     
+  }
+  .container form {
+    margin-top: 25px;
+    
+    
+    & > section {
+      display: flex;
+      flex-direction: column;
+
+      &:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        
+        
+      }
+      &:nth-child(2) {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        align-items: center;
+        article{
+          margin-top: 15px;
+          width: 95%;
+          
+          &:nth-child(3){
+            section{
+              padding-bottom: 30px;
+              label{
+                padding: 5px;
+                margin-bottom: 5px;;
+              }
+            }
+        }
+         }
+        
+        
+      }
+      & > label {
+        margin: 15px;
+      
+}
+    }
+  }
+
+  .container form input:nth-child(3){
+    margin-top: 25px;
+  }
+}

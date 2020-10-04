@@ -1,5 +1,22 @@
 @import '../variables.scss';
 
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: 1.8em;
+}
+
+.containerCard{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+
 .search {
   display: flex;
   flex-direction: row;
@@ -7,13 +24,18 @@
   justify-content: space-between;
   align-self: center;
   justify-self: center;
-  margin: 1rem;
+  margin: 3rem 0 ;
   background-color:  #F6F8FF;
-  border: 1px solid #50514F;
+  border: 1px solid lightgray;
   border-radius: 10px;
   height: 40px;
   padding: 0 1rem;
-  width: 700px;
+  margin-left: 10px;
+}
+
+.search:hover{
+  box-shadow: $value-shadow-searchs;
+
 }
 
 .search input{
@@ -23,7 +45,25 @@
   height: 38px;
   outline: none;
   width: 640px;
+  font-weight: 500;
+  font-size: 1.1em;
 }
+
+.options {
+  background-color:  #F6F8FF;
+  font-size: 1rem;
+  border: none;
+  font-family: $font-Family-Kumbh;
+  height: 38px;
+  outline: none;
+  width: 130px;
+  option:hover {
+    background-color: $color-Card;
+    color:  #F6F8FF;
+    padding: 2px 0;
+  }
+}
+
 
 .searchIcon {
   background-color:  #F6F8FF;
@@ -51,14 +91,26 @@
   and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 2) {
     .search {
-      width: 350px;
+      width: 70%;
     }
 }
 
-// Tablet
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width:425px) and ( max-width:599px) {
 
+  .container{
+    font-size: 1.1em;
+    justify-content: space-around;
+  }
+  .containerCard{
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .search{
+    width:40%;
+    margin:0;
+
+  }
 }

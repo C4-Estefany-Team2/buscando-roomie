@@ -1,0 +1,84 @@
+@import "../variables.scss";
+.footer {
+  background: linear-gradient( $color-Card,$Primary-Lightest);
+  min-height: $space-large;
+  width: minmax(360px, maxcontent);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.5);
+}
+.brand {
+  height: 37.6px;
+  margin: 2px 10px;
+  width: 37.6px;
+}
+.logos-container {
+  display: flex;
+  font-family: $font-Family-Kumbh;
+}
+.logos {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo-description {
+  cursor: pointer;
+  font-size: 10px;
+  margin: 0 10px;
+  &:hover {
+    color: white;
+  }
+}
+.footer-contacto {
+  align-items: center;
+  background-color: $Primary-Gray;
+  color: $color-Card;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-Family-Kumbh;
+  font-size: 12px;
+  background-color: #99afff;
+  color: black;
+  justify-content: space-evenly;
+  min-width: -moz-available;
+  min-width: -webkit-fill-available;
+}
+
+@media only screen and (min-width: 530px){
+
+	.footer-contacto-elements{
+    display: flex;
+    >p{
+      margin: 10px 10px;
+    }
+  } 
+	
+}
+
+
+@media only screen and (min-width:1024px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .footer-contacto {
+    align-items: center;
+    background-color: inherit;
+    color: $Primary-Gray;
+    height: auto;
+    min-width: max-content;
+    >h4 {
+      align-self: center;
+      margin: 5px 0px;
+    }
+  }
+  .footer-contacto-elements{
+    display: flex;
+    >p{
+      margin: 10px 10px;
+    }
+  }
+}
