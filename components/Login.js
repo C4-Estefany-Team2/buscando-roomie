@@ -40,13 +40,13 @@ function Login ({ handleClose, show, modal, props }) {
         apiKeyToken: 'dcaf7f98202fb2a842e0bd6652037e390e4f59f3fc92e29b4b45fe98c5f16a06'
       }
     })
-      .then(modal(0))
       .then((res) => {
-        localStorage.setItem('usuario', {
+        localStorage.setItem('usuario', JSON.stringify({
           token: res.data.token,
           user: res.data.user
-        })
+        }))
       })
+      .then(modal(0))
       .catch((error) => {
         console.log(error)
       })

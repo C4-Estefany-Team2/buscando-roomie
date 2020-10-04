@@ -46,17 +46,17 @@ export default function Layout (props) {
     <>
       <Header modal={(arg) => showModal(arg)} />
       <div className={styles.container}>
-        <Login
-          show={login}
-          handleClose={hideLoginModal}
-          modal={(arg) => showModal(arg)}
-        />
-
-        {/* <AnnouncingRoom
+        {/* <Login
           show={login}
           handleClose={hideLoginModal}
           modal={(arg) => showModal(arg)}
         /> */}
+
+        <AnnouncingRoom
+          show={login}
+          handleClose={hideLoginModal}
+          modal={(arg) => showModal(arg)}
+        />
 
         <Register
           show={register}

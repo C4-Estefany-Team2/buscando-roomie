@@ -12,7 +12,7 @@
   z-index: 9999;
   .container {
     border: 1px solid black; 
-    width: 400px;
+    width: 425px;
     height: calc(100vh - 20vh);
     display: flex;
     flex-direction: column;
@@ -72,14 +72,29 @@
     border: 1px solid;
     border-radius: 4px;
     margin-left: 0px;
-
     justify-content: left;
+  }
+
+  & > section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    align-items: center;
+    h3 {
+      justify-self: center;
+      margin: 0;
+    }
+    select {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   article {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     column-gap: 20px;
     align-items: center;
     section {
