@@ -133,7 +133,12 @@
 @media screen and (min-width:425px) and ( max-width:599px) {
   .principalContainer{
     .container{
+      width:95%;
   height: 90vh;
+   div{
+     font-size: 15px;
+     width: 80%;
+   }
   }
   }
 }
@@ -142,6 +147,7 @@
   .principalContainer{
     .container{
   height: 90vh;
+
   }
   }
 

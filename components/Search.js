@@ -6,7 +6,7 @@ import { useFilter } from '../hooks/useFilter'
 // import { useRouter } from 'next/router'
 import { getRoomsByCity } from '../selectors/getRoomsByCity'
 
-const cities = ['C', 'Campeche', 'CDMX', 'Chiapas', 'Cuernavaca', 'Puebla']
+const cities = ['', 'Campeche', 'CDMX', 'Chiapas', 'Cuernavaca', 'Puebla']
 
 const Search = () => {
   // const router = useRouter()
