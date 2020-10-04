@@ -9,7 +9,6 @@ export default function Home () {
   const router = useRouter()
   const { rooms } = router.query
   const { room } = useFetchCardRoom(rooms)
-  console.log(room)
 
   return (
     <>

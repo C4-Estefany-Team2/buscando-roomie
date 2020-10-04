@@ -19,7 +19,7 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
     Lavanderia: false,
     Telefono: false,
     Tv: false,
-    idHost: parseInt(usuario.user.id),
+    idHost: usuario.user.id,
     hostName: usuario.user.name
   })
 
@@ -95,6 +95,7 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
     }).catch((error) => {
       console.log(error)
     })
+    modal(0)
   }
 
   return (

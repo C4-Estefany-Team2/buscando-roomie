@@ -41,7 +41,7 @@ function Login ({ handleClose, show, modal, props }) {
       }
     })
       .then((res) => {
-        localStorage.setItem('usuario', JSON.stringify({
+        sessionStorage.setItem('usuario', JSON.stringify({
           token: res.data.token,
           user: res.data.user
         }))
@@ -50,7 +50,6 @@ function Login ({ handleClose, show, modal, props }) {
       .catch((error) => {
         console.log(error)
       })
-    console.log(JSON.parse(localStorage.getItem('usuario')))
   }
   const handleRegister = () => {
     modal(1)
