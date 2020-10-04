@@ -20,19 +20,23 @@ const Search = () => {
 
   return (
     <>
-      <form className={styles.search}>
+      <div className={styles.container}>
         <label>Escoge una ciudad:</label>
-        <select className={styles.options} id="cities" name="searchText" value={searchText} onChange={handleInputChange}>
-          {cities.map((item, index) => (
-            <option key={index}>{ item }</option>
-          ))}
-        </select>
-      </form>
-      {
-        roomsFiltered.map((item) => (
-          <Card key={item.id} {...item} />
-        ))
-      }
+        <form className={styles.search}>
+          <select className={styles.options} id="cities" name="searchText" value={searchText} onChange={handleInputChange}>
+            {cities.map((item, index) => (
+              <option key={index}>{ item }</option>
+            ))}
+          </select>
+        </form>
+      </div>
+      <div className={styles.containerCard}>
+        {
+          roomsFiltered.map((item) => (
+            <Card key={item.id} {...item} />
+          ))
+        }
+      </div>
     </>
   )
 }

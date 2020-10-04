@@ -18,10 +18,10 @@ const Card = ({ _id, images, price, location, Perfil, ocupation }) => {
           <img src={Perfil} alt="photo host"/>
           <p>Name</p>
         </div>
-        <footer>
+        <div className={styles.footer}>
           <p>${price}MXN / mes</p>
           <p>Roomie: {ocupation}/{location}</p>
-        </footer>
+        </div>
       </section>
     </Link>
   )
