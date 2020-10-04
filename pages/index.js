@@ -12,12 +12,11 @@ export default function Home () {
 
   return (
     <>
-      <Search />
       <Hero
         heroImage={ '/heroImage.png'}
       />
       <main className={styles.father}>
-        <h1 className={styles.title}>Habitaciones disponibles</h1>
+        <Search />
         <section className={styles.main}>
           {room.data?.map((item) => (
             <Card key={item.id} {...item} />

@@ -4,34 +4,36 @@
 .container{
   font-family: $font-Family-Kumbh;
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border: 1px solid lightgray;
   border-radius:$border-value;
   cursor: pointer;
-  margin: 5px;
-
+  margin: 30px;
   display: flex;
   flex-direction: column;
 
   .placePhoto{
-    height: $space-extraLarge;
+    height: auto;
     width: 100%;
     border-top-left-radius: $border-value;
     border-top-right-radius: $border-value;
   }
 
-  footer{
-    background-color: $color-Card;
+  .footer{
+    background:linear-gradient($color-Card, $Primary-Lightest);
     border-bottom-left-radius: $border-value;
     border-bottom-right-radius: $border-value;
-
     height: $space-large;
     padding: $space-micro;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: border 1s;
+    border: 1.8px solid black;
   }
+
+  
 }
 
 .like{
@@ -62,3 +64,15 @@
     width: 48px;
   }
 }
+
+.container .footer:hover{
+    border: 1px solid lightseagreen;
+    
+    background-color: lightskyblue;
+    
+  }
+
+  .container:hover{
+  box-shadow: $value-shadow-box-blue-2;
+
+  }
