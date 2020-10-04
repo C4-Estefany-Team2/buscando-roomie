@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function AnnouncingRoom ({ handleClose, show, modal, props }) {
   const showHideClassName = show ? style.principalContainer : style.displayNone
-  const usuario = JSON.parse(localStorage.getItem('usuario'))
+  // const usuario = JSON.parse(localStorage.getItem('usuario'))
 
   const [form, setValues] = useState({
     profileImg: '',
@@ -18,9 +18,9 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
     Desayuno: false,
     Lavanderia: false,
     Telefono: false,
-    Tv: false,
-    idHost: parseInt(usuario.user.id),
-    hostName: usuario.user.name
+    Tv: false
+    // idHost: parseInt(usuario.user.id),
+    // hostName: usuario.user.name
   })
 
   const handleInput = (event) => {

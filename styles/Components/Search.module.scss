@@ -1,5 +1,22 @@
 @import '../variables.scss';
 
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: 1.8em;
+}
+
+.containerCard{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+
 .search {
   display: flex;
   flex-direction: row;
@@ -7,13 +24,13 @@
   justify-content: space-between;
   align-self: center;
   justify-self: center;
-  margin: 5rem 0 ;
+  margin: 3rem 0 ;
   background-color:  #F6F8FF;
   border: 1px solid lightgray;
   border-radius: 10px;
   height: 40px;
   padding: 0 1rem;
-  width: 80%;
+  margin-left: 10px;
 }
 
 .search:hover{
@@ -79,8 +96,21 @@
 }
 
 @media screen and (min-width:425px) and ( max-width:599px) {
+
+  .container{
+    font-size: 1.1em;
+    justify-content: space-around;
+  }
+  .containerCard{
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
   .search{
-    width:80%;
-    margin:4rem;
+    width:40%;
+    margin:0;
+
   }
 }
