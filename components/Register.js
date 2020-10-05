@@ -30,7 +30,7 @@ function Register ({ handleClose, show, modal, props }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const url = 'http://localhost:8080/api/auth/sign-up'
+    const url = 'https://roomie.vercel.app/api/auth/sign-up'
     axios({
       method: 'POST',
       url: url,
