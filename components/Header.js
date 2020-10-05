@@ -74,7 +74,7 @@ class Header extends Component {
               {this.props.which
                 ? <>
                   <li className={`${style['nav-list-item']}`}>
-                    <a onClick={this.handleAnnounce} href='/'>Anuncia un cuarto</a>
+                    <a onClick={this.handleAnnounce}>Anuncia un cuarto</a>
                   </li>
                   <li className={`${style['nav-list-item']}`}>
                     <a onClick={this.handleSession}>Cerrar sesión</a>
