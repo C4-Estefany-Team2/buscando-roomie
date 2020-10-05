@@ -179,7 +179,7 @@
 }
 
 
-@media screen and (min-width:425px) and ( max-width:1200px) {
+@media screen and (min-width:400px) and ( max-width:1200px) {
   .principalContainer{
      display: flex;
      overscroll-behavior-y: inherit;
@@ -197,7 +197,7 @@
        justify-content: center;
        form{
         position: relative;
-    top: 50px;
+    top: 120px;
        }
       }
      }
