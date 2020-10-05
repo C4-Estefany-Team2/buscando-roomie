@@ -4,7 +4,25 @@ import axios from 'axios'
 
 function AnnouncingRoom ({ handleClose, show, modal, props }) {
   const showHideClassName = show ? style.principalContainer : style.displayNone
-  // const usuario = JSON.parse(localStorage.getItem('usuario'))
+  const usuario = user()
+  let arr = {
+    idHost: '',
+    hostName: '',
+    phone: '',
+    email: ''
+  }
+  function user () {
+    try {
+      const user = JSON.parse(sessionStorage.getItem('usuario'))
+      arr.idHost = user.user.id
+      arr.hostName = user.user.name
+      arr.phone = user.user.phone
+      arr.email = user.user.email
+      return user
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const [form, setValues] = useState({
     profileImg: '',
@@ -18,9 +36,11 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
     Desayuno: false,
     Lavanderia: false,
     Telefono: false,
-    Tv: false
-    // idHost: parseInt(usuario.user.id),
-    // hostName: usuario.user.name
+    Tv: false,
+    idHost: arr.idHost,
+    hostName: arr.hostName,
+    phone: arr.phone,
+    email: arr.email
   })
 
   const handleInput = (event) => {
@@ -86,7 +106,8 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
         Lavanderia: form.Lavanderia,
         Telefono: form.Telefono,
         Tv: form.tv,
-        idHost: form.idHost,
+        phone: form.phone,
+        email: form.email,
         nameHost: form.hostName,
         createdAt: Date.now()
       }
@@ -95,6 +116,7 @@ function AnnouncingRoom ({ handleClose, show, modal, props }) {
     }).catch((error) => {
       console.log(error)
     })
+    modal(0)
   }
 
   return (

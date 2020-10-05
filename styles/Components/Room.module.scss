@@ -5,6 +5,10 @@
   justify-content: space-around;
   h2{
     font-weight: 400;
+
+    span{
+      font-weight: bold;
+    }
   }
 
 }
@@ -34,16 +38,19 @@
   }
 
   small{
-    margin-bottom: $space-nano;
-  }
+    margin  : $space-nano;
 
-  article{
-    img{
-      margin-right: $space-micro;
-      object-fit: cover;
-      object-position: center center;
+    a{
+      padding-left: $space-nano;
     }
   }
+
+  img{
+    margin-right: $space-micro;
+    object-fit: cover;
+    object-position: center center;
+  }
+  
 
   button{
     font-family: $font-Family-Kumbh;
