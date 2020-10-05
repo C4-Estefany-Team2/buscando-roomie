@@ -26,7 +26,7 @@ function Login ({ handleClose, show, modal, force }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const url = 'https://roomie.vercel.app//api/auth/sign-in'
+    const url = 'https://roomie.vercel.app/api/auth/sign-in'
     const token = Buffer.from(`${form.email}:${form.password}`, 'utf8').toString('base64')
     axios({
       method: 'POST',
